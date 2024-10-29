@@ -1,7 +1,7 @@
 {
   "expo": {
-    "name": "myList",
-    "slug": "myList",
+    "name": "TimeTrack",
+    "slug": "TimeTrack",
     "version": "1.0.0",
     "orientation": "portrait",
     "icon": "./assets/icon.png",
