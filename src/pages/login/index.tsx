@@ -16,15 +16,16 @@ export default function Login() {
             <View style={style.boxTop}>
                    <Image style={style.logo}
                        source={Logo}
+                       resizeMode="contain"
                    />
-                   <Text>
+                   <Text  style={style.text}>
                     Bem Vindo de Volta
                    </Text>
                 </View>
              <View style={style.boxMid}>
-                <Text>Endereço de e-mail</Text>
+                <Text style= {style.textInput}>ENDEREÇO DE E-MAIL</Text>
                 <TextInput/>
-                <Text>Senha</Text>
+                <Text style= {style.textInput}>SENHA</Text>
                 <TextInput/>
             </View>
             <View style={style.boxBottom}>

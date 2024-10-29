@@ -1,4 +1,5 @@
 import { Dimensions, StyleSheet } from "react-native";
+import { themes } from "../../glogal/themes";
 
 export const style = StyleSheet.create({
     container:{
@@ -19,22 +20,37 @@ export const style = StyleSheet.create({
         height:Dimensions.get('window').height/4,
         width:'100%',
         marginBottom: '5%',
-        backgroundColor:'white'
+        backgroundColor:'white',
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     boxBottom:{
         height:Dimensions.get('window').height/3,
         width:'100%',
         marginBottom: '5%',
         backgroundColor:'white',
-        alignItems: 'center'
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     logo: {
-        height:180,
-        width:180,
+        height:240,
+        width:240,
+        alignItems: 'center',
+        justifyContent: 'center'
     },
     text: {
-        fontWeight:'bold',
-        marginTop:40
+        fontWeight:'900',
+        marginTop:10,
+        fontSize:32,
+        color:themes.colors.primary,
+        textShadowColor: 'rgba(0, 0, 0, 0.2)',
+        textShadowOffset: { width: 2, height: 2 }, 
+        textShadowRadius: 1,
+    },
+    textInput:{
+        fontWeight: 'bold',
+        marginLeft: 5,
+        color:themes.colors.gray,
     }
 });
 
