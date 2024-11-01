@@ -4,65 +4,72 @@ import { themes } from '../../global/themes';
 const windowWidth = Dimensions.get('window').width;
 const windowHeight = Dimensions.get('window').height;
 const isLargeScreen = windowWidth > 800;
+const isMediumScreen = windowWidth < 400;
+const  isSmallScreen = windowWidth < 300
 
 export const style = StyleSheet.create({
     container: {
         flex: 1,
         alignItems: "center",
         justifyContent: "center",
-        backgroundColor: themes.colors.bgScreen,
-        borderWidth: 1,             
-        borderColor: "#90EE90",     
-        borderRadius: 10,                            
+        flexDirection: 'column',
+        backgroundColor: themes.colors.bgScreen,                                       
         shadowOffset: { width: 0, height: 4 },
         shadowOpacity: 0.3,
-        shadowRadius: 10,
         elevation: 8,               
-        width: isLargeScreen ? '50%' : '100%', 
-        height: isLargeScreen ? '80%' : '100%', 
+        width: isLargeScreen ? '60%' : '100%', 
+        maxWidth: 900, 
+        height: '100%', 
         overflow: 'hidden', 
-        padding: isLargeScreen ? 40 : 20, 
+        padding: isLargeScreen ? 50 : isSmallScreen ? 15 : 20, 
     },
     boxTop: {
         height: isLargeScreen ? windowHeight / 4 : windowHeight / 3,
         width: '100%',
-        marginTop: isLargeScreen ? '10%' : '20%', 
-        alignItems: 'center',
+        marginTop: isLargeScreen ? '5%' : isSmallScreen ? '15%' : '20%', 
+        alignItems: isLargeScreen ? 'center' : 'center',
         justifyContent: 'center',
-        overflow: isLargeScreen ? 'hidden' : 'visible', 
+        overflow: 'hidden',
+        columnGap: 10,
     },
     boxMid: {
-        height: isLargeScreen ? windowHeight / 6 : windowHeight / 4,
+        marginTop: isLargeScreen ? '5%' : isSmallScreen ? '15%' : '5%',
+        height: isLargeScreen ? windowHeight / 4 : windowHeight / 4,
         width: '100%',
-        paddingHorizontal: isLargeScreen ? '10%' : '5%', 
-        alignItems: 'flex-start',
+        paddingHorizontal: isLargeScreen ? '12%' : '5%', 
+        alignItems: isLargeScreen ? 'center': 'baseline',
         justifyContent: 'center',
+        columnGap: 10,
     },
-    boxBottom: {
-        height: isLargeScreen ? windowHeight / 10 : windowHeight / 16,
-        width: isLargeScreen ? '30%' : '80%', 
+    boxButton: {
+        height: isLargeScreen ? windowHeight / 15 : windowHeight / 16,
+        width: isLargeScreen ? '15%' : '80%', 
         alignItems: 'center',
         justifyContent: 'center',
         backgroundColor: themes.colors.primary,
         borderRadius: 20,
+        columnGap: 10,
     },
-    textBottom: {
+    textButton: {
         fontWeight: '900',
-        fontSize: 20,
+        fontSize: isLargeScreen ? 22 : isSmallScreen ? 16 : 18,
         color: 'black',
     },
     logo: {
-        height: isLargeScreen ? 180 : 240, 
-        width: isLargeScreen ? 180 : 240,
+        height: isLargeScreen ? 200 : isSmallScreen ? 120 : 240, 
+        width: isLargeScreen ? 200 : isSmallScreen ? 120 : 240,
         alignItems: 'center',
         justifyContent: 'center',
         overflow: 'hidden', 
     },
-    text: {
+    textMid: {
         fontWeight: '900',
         marginTop: 10,
-        fontSize: isLargeScreen ? 28 : 32,
-        color: themes.colors.primary,
+        height: isLargeScreen ? '20%' : '20%',
+        columnGap: 10,
+        fontSize: isLargeScreen ? 35 : isSmallScreen ? 24 : 32,
+        color: 'white',
+        marginBottom: isLargeScreen ? '2%' : '0.1%',
         textShadowColor: 'rgba(0, 0, 0, 0.5)',
         textShadowOffset: { width: 1, height: 2 },
         textShadowRadius: 5,
@@ -71,14 +78,15 @@ export const style = StyleSheet.create({
         fontWeight: 'bold',
         marginLeft: 5,
         color: themes.colors.lightGray,
-        fontSize: isLargeScreen ? 16 : 14,
+        fontSize: isLargeScreen ? 18 : isSmallScreen ? 12 : 14,
     },
     input: {
         flex: 1,
         height: 40,
         borderRadius: 10,
         paddingLeft: 10,
-        backgroundColor: 'white',
+        paddingRight: 15,
+        backgroundColor: 'white'
     },
     boxInput: {
         backgroundColor: themes.colors.lightGray,
@@ -87,7 +95,8 @@ export const style = StyleSheet.create({
         borderRadius: 10,
         marginBottom: 20,
         marginTop: 10,
-        width: '100%',
+        width: isLargeScreen ? '60%' : '100%',
+        maxWidth: 500,
         paddingHorizontal: 10,
     }
 });

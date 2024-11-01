@@ -55,7 +55,7 @@ export default function Login() {
                     source={Logo}
                     resizeMode="contain"
                 />
-                <Text style={style.text}>
+                <Text style={style.textMid}>
                     Bem Vindo de Volta
                 </Text>
             </View>
@@ -94,9 +94,9 @@ export default function Login() {
                     />
                 </View>
             </View>
-            <View style={style.boxBottom}>
+            <View style={style.boxButton}>
                 <TouchableOpacity onPress={handleLogin}>
-                    <Text style={style.textBottom}>
+                    <Text style={style.textButton}>
                         Entrar
                     </Text>
                 </TouchableOpacity>
